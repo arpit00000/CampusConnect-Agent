@@ -1,7 +1,7 @@
 import requests
 
 # NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account (https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-authentication.html?context=wx)
-API_KEY = "<your API key>"
+API_KEY = "8KV4LsF-nrxoZ_tzdgBTGF3dhbJGpwqt2Z1ma7SmQqMl"
 token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
 mltoken = token_response.json()["access_token"]
 
@@ -19,4 +19,5 @@ try:
 except ValueError:
     print(response_scoring.text)
 except Exception as e:
+
     print(f"An unexpected error occurred: {e}")
